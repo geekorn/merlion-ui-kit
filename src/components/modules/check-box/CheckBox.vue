@@ -1,8 +1,10 @@
 <template lang="html">
     <label class="checkbox">
-        <span class="checkbox__input" @click="action">
+        <!-- <span class="checkbox__input" @click="action">
             <span :class="{'checkbox__inner': true, 'checkbox__inner--checked': value}"></span>
-        </span>
+        </span> -->
+        <input class="checkbox__input" type="checkbox" name="">
+        <span class="checkbox__pseudo-input"></span>        
         <span class="checkbox__label" @click="action">{{text}}</span>
     </label>
 </template>

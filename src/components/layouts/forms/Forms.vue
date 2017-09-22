@@ -1,7 +1,7 @@
 <template>
   <div class="forms-container">
       <select-item></select-item>
-      <check-box></check-box>
+      <check-box text="Чекбокс" :value="check"></check-box>
   </div>
 </template>
 
