@@ -1,20 +1,25 @@
 <template>
     <div class="select-item" v-on-clickaway="away">
-        <div :class="[ 'select-item__arrow', {'select-item__arrow--select': selected && inputSelect.length > 2} ]" @click="componentClick"></div>
-        <div :class="[ 'select-item__tags', {'select-item__tags--select': selected, 'select-item__tags--focus': focus} ]" @click="componentClick">
-            <div class="select-item__tags__label">{{title}}</div>
-            <input
-                type="text"
-                :placeholder="placeholder"
-                v-model="inputSelect"
-                class="select-item__tags__input"
-                @keyup.46="inputSelect = ''"
-                @keyup="newInput()"/>
-            <span v-show="loading" class="select-item__tags__icon-spin4 icon-spin4 animate-spin"></span>
+        <input
+            type="text"
+            :placeholder="placeholder"
+            v-model="inputSelect"
+            class="select-item__input"
+            @keyup.46="inputSelect = ''"
+            @keyup="newInput()"/>
+        <div class="select-item__label">{{title}}</div>
+        <div v-show="loading" class="select-item__icon-spin4 icon-spin4 animate-spin"></div>
+        <div :class="[ 'select-item__arrow', {'select-item__arrow--select': selected && inputSelect.length > 2} ]" 
+            @click="componentClick">
         </div>
         <transition name="select-item__fade">
-            <ul class="select-item__content" v-show="inputSelect.length > 2 && selected === true">
-                <li class="select-item__content__item" v-for="item in items" @click="selectItem(item)">{{getTextInfo(item.info)}}</li>
+            <ul class="select-item__list" v-show="inputSelect.length > 2 && selected === true">
+                <li class="select-item__option" 
+                    v-for="item in items"
+                    :key="item.id"
+                    @click="selectItem(item)">
+                    {{getTextInfo(item.info)}}
+                </li>
             </ul>
         </transition>
     </div>
@@ -40,7 +45,8 @@ export default {
     data () {
         return {
             selected: false,
-            inputSelect: ''
+            inputSelect: '',
+            description: 'Селект с фильтром. начинает поиск после ввода 3х символов'
         }
     },
     created () {

@@ -19,10 +19,10 @@ export default {
     },
     data () {
         return {
-            description: 'Чекбокс обычный'
+            description: 'Описание компонента'
         }
     }
 }
 </script>
 
-<style lang="scss" src="./check-box.scss" scoped></style>
+<style lang="scss" src="./_component_name.scss" scoped></style>

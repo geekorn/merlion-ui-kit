@@ -1,8 +1,8 @@
 <template lang="html">
-    <label class="checkbox">
-        <input class="checkbox__input" type="checkbox" :name="name" :value="value"/>
-        <span class="checkbox__inner"></span>
-        <span class="checkbox__label" @click="action">
+    <label class="radio">
+        <input class="radio__input" type="radio" :name="name" :value="value"/>
+        <span class="radio__inner"></span>
+        <span class="radio__label" @click="action">
             <slot></slot>
         </span>
     </label>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'checkbox',
+    name: 'radio',
     props: {
         name: { type: String },
         text: { type: String, default: '' },
@@ -19,10 +19,10 @@ export default {
     },
     data () {
         return {
-            description: 'Чекбокс обычный'
+            description: 'Радиокнопка обычная'
         }
     }
 }
 </script>
 
-<style lang="scss" src="./check-box.scss" scoped></style>
+<style lang="scss" src="./radio.scss" scoped></style>

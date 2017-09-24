@@ -1,22 +1,28 @@
+@import "../../../styles/_misc/variables.scss";
+
 .checkbox {
-    // color: inherit;
     position: relative;
-    // display: inline-block;
+    margin-right: 15px;
+    display: inline-flex;
     white-space: normal;
     cursor: pointer;
-    
-    &__label {
-        font-size: 14px;
-        padding-left: 5px;
-    }
 
     &__input {
         display: none;
+
+        &:checked ~ .checkbox__inner {
+            background-color: $color-red;
+            border-color: $color-red;
+
+            &::after {
+                transform: rotate(45deg) scaleY(1);
+            }
+        }
     }
 
-    &__pseudo-input {        
+    &__inner {
         position: relative;
-        display: inline-block;        
+        margin-right: 5px;
         width: 18px;
         height: 18px;
         border: 1px solid #bfcbd9;
@@ -49,5 +55,9 @@
         &::after {
             transform: rotate(45deg) scaleY(1);
         }
+    }
+
+    &__label {
+        font-size: 1rem;
     }
 }

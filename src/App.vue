@@ -29,8 +29,8 @@ export default {
         Forms
     },
     created () {
-        console.log(Tabs)
-        console.log(Tab)
+        // console.log(Tabs)
+        // console.log(Tab)
     }
 }
 </script>

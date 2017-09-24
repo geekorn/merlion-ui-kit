@@ -1,0 +1,45 @@
+@import "../../../styles/_misc/variables.scss";
+
+.text-input {
+    position: relative;
+    display: block;
+
+    &__input {
+        padding: 5px;
+        padding-top: 25px;
+        padding-right: 25px;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid rgba($color-black, 0.26);
+        outline: 0;
+        color: #212121;
+        font-size: 1.2rem;
+        font-family: sans-serif;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &:focus {
+            border-color: $color-blue;
+            border-width: 2px;
+
+            & ~ .text-input__label {
+                color: $color-blue;
+                font-weight: 700;
+                transform: translateY(-100%) scale(0.75);
+            }
+        }
+    }
+
+    &__label {
+        position: absolute;
+        left: 5px;
+        bottom: 5px;
+        color: $color-black;
+        font-size: 1.2rem;
+        font-family: sans-serif;
+        font-weight: lighter;
+        transform-origin: left top;
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+}

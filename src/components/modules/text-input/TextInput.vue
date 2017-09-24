@@ -1,8 +1,10 @@
 <template lang="html">
-    <label class="checkbox">
-        <input class="checkbox__input" type="checkbox" :name="name" :value="value"/>
-        <span class="checkbox__inner"></span>
-        <span class="checkbox__label" @click="action">
+    <label class="text-input">
+        <input class="text-input__input" 
+            type="text" 
+            :placeholder="placeholder" 
+            :value="value"/>        
+        <span class="text-input__label">
             <slot></slot>
         </span>
     </label>
@@ -19,10 +21,10 @@ export default {
     },
     data () {
         return {
-            description: 'Чекбокс обычный'
+            description: 'Описание компонента'
         }
     }
 }
 </script>
 
-<style lang="scss" src="./check-box.scss" scoped></style>
+<style lang="scss" src="./text-input.scss" scoped></style>

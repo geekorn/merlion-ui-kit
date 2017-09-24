@@ -35,7 +35,6 @@ export default {
             }
         },
         changeTab (tab) {
-            console.log(tab)
             this.current = tab
             this.tabs.forEach((value) => {
                 if (value === tab) {
@@ -47,7 +46,7 @@ export default {
         }
     },
     created () {
-        console.log(this)
+        // console.log(this)
     },
     components: {
         // empty
